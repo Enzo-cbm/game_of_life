@@ -2,13 +2,13 @@ function [mat]=g_o_f(n, rep)
         mat= zeros(n,n)
     for i = 1:n
         for j = 1:n
-            mat(i,j)= round(rand())   //creation matrice etudie
+            mat(i,j)= round(rand())   
         end
     end
-    mat_tempo = mat     //matrice qui contiendra les changements
-    for o = 1:rep          //itteration du jeu
+    mat_tempo = mat     
+    for o = 1:rep         
     for i= 1:n
-        for j = 1:n   //etude voisinage element de la matrice                              
+        for j = 1:n                              
                 voisins = 0
                 if( i == 1 & j == 1)                  //angle 1
                     for k=1:(i+1)
@@ -90,8 +90,7 @@ function [mat]=g_o_f(n, rep)
                 end
                 end
                 end
-                //ne pas conter un meme element comme son voisin
-                //implementation matrice temporaire
+                
                 if mat(i,j) == 1
                     voisins = voisins -1
                 end
